@@ -1,0 +1,11 @@
+User Object functionalities:
+
+registerUser - Adds username to a pool of users (can be usefull later)
+user1.followUser(user2) - Add user2 to a list of key "<user1>:following"
+		- Also add the the user1 to a list "<user2>:followers"
+		- Each user will have associated the users who is following and the users who follows them
+
+user1.unfollow(user2) - Same thing
+user1.postMsg(<String>) - Post something and everyone who follows user1 will get the message
+
+user1.getMsgs() - This gets everything posted so far

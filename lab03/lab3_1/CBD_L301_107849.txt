@@ -1,0 +1,35 @@
+cqlsh> CREATE KEYSPACE teste WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+cqlsh> CREATE KEYSPACE teste WITH replication = {'class': 'SimpleStrategy', 'replication_factor': 1};
+
+cqlsh> DESCRIBE KEYSPACES;
+
+system       system_distributed  system_traces  system_virtual_schema
+system_auth  system_schema       system_views   teste                
+
+cqlsh> USE teste;
+cqlsh:teste> CREATE TABLE groups ( groupname text, username text, email text, age int, PRIMARY KEY (groupname, username));
+
+cqlsh:teste>    INSERT INTO groups (groupname, username, email, age) VALUES ('Group1', 'User1', 'user1@example.com', 25);
+cqlsh:teste>    SELECT * FROM groups;
+
+ groupname | username | age | email
+-----------+----------+-----+-------------------
+    Group1 |    User1 |  25 | user1@example.com
+
+(1 rows)
+cqlsh:teste>    UPDATE groups SET email = 'newemail@example.com' WHERE groupname = 'Group1' AND username = 'User1';
+cqlsh:teste>    SELECT * FROM groups;
+
+ groupname | username | age | email
+-----------+----------+-----+----------------------
+    Group1 |    User1 |  25 | newemail@example.com
+
+(1 rows)
+cqlsh:teste>    DELETE FROM groups WHERE groupname = 'Group1' AND username = 'User1';
+cqlsh:teste>    SELECT * FROM groups;
+
+ groupname | username | age | email
+-----------+----------+-----+-------
+
+(0 rows)

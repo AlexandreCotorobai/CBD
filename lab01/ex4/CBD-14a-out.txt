@@ -1,0 +1,17 @@
+Search for ('Enter' for quit): aeriel
+Results: 
+aeriel
+aeriela
+aeriell
+Search for ('Enter' for quit): susann
+Results: 
+susann
+susanna
+susannah
+susanne
+Search for ('Enter' for quit): agg
+Results: 
+aggi
+aggie
+aggy
+Search for ('Enter' for quit): 

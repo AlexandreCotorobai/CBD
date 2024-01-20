@@ -1,0 +1,8 @@
+Bob's followers: [Alice]
+Bob posted 'Hello, Twitter!'
+Alice received 'Hello, Twitter!' from Bob
+Bob posted 'Unfollowed!'
+Bob's followers: []
+Bob's tweets: Hello, Twitter!
+Unfollowed!
+

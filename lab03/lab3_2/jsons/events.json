@@ -1,0 +1,90 @@
+[
+  {
+    "video_id": 3,
+    "user_id": 3,
+    "event_timestamp": "2023-11-28 00:57:53.785",
+    "event_id": 9,
+    "event_type": "like",
+    "video_time": 45
+  },
+  {
+    "video_id": 5,
+    "user_id": 5,
+    "event_timestamp": "2023-11-28 00:57:53.811",
+    "event_id": 11,
+    "event_type": "like",
+    "video_time": 50
+  },
+  {
+    "video_id": 2,
+    "user_id": 2,
+    "event_timestamp": "2023-11-28 00:57:53.770",
+    "event_id": 8,
+    "event_type": "view",
+    "video_time": 60
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.759",
+    "event_id": 7,
+    "event_type": "stop",
+    "video_time": 90
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.745",
+    "event_id": 6,
+    "event_type": "like",
+    "video_time": 90
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.735",
+    "event_id": 5,
+    "event_type": "resume",
+    "video_time": 60
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.725",
+    "event_id": 4,
+    "event_type": "pause",
+    "video_time": 60
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.714",
+    "event_id": 3,
+    "event_type": "resume",
+    "video_time": 30
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.705",
+    "event_id": 2,
+    "event_type": "pause",
+    "video_time": 30
+  },
+  {
+    "video_id": 1,
+    "user_id": 1,
+    "event_timestamp": "2023-11-28 00:57:53.694",
+    "event_id": 1,
+    "event_type": "start",
+    "video_time": 0
+  },
+  {
+    "video_id": 4,
+    "user_id": 4,
+    "event_timestamp": "2023-11-28 00:57:53.798",
+    "event_id": 10,
+    "event_type": "view",
+    "video_time": 75
+  }
+]

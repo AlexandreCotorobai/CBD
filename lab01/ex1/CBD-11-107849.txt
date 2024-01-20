@@ -1,0 +1,43 @@
+ping
+set "teste" "testado"
+get "teste"
+get "nada"
+help clear
+help "clear"
+help
+clear
+bgsave
+strlen "banana"
+strlen "banana
+strlen banana
+strlen "teste"
+get "teste"
+append teste 2
+get "teste"
+set "temp" "died"
+expire "temp" 10
+get "temp"
+incr "teste"
+set 2 "numero"
+incr 2
+incr "2"
+get 2
+set "dois" 2
+incr "dois"
+get "dois"
+del 2
+get 2
+rename "teste" "novo teste"
+get "novo teste"
+type "novo teste"
+type "dois"
+get "dois"
+exist "nope"
+exists "nope"
+exists "dois"
+expire "dois" 10
+persist "dois"
+get "dois"
+set 22 geaga
+type 22
+clear

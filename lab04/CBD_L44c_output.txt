@@ -1,0 +1,87 @@
+1. As 5 músicas mais populares:
+t.name              a.name              t.popularity        
+"greedy"            "Tate McRae"        100                 
+"Si No Estás"       "iñigo quintero"    99                  
+"Cruel Summer"      "Taylor Swift"      99                  
+"MONACO"            "Bad Bunny"         98                  
+"Strangers"         "Kenya Grace"       98                  
+
+2. O artista com mais músicas publicadas:
+Name                totalTracks         
+"Bad Bunny"         17                  
+
+3. O álbum mais recente do artista Jung Kook:
+AlbumName           ReleaseDate         
+"GOLDEN"            "2023-11-03"        
+
+4. Musicas com duração superior a 3 min:
+t.duration          t.name              
+206020              "Standing Next to You"
+184061              "Si No Estás"       
+183551              "Seven (feat. Latto) (Explicit Ver.)"
+229478              "Is It Over Now? (Taylor's Version) (From The Vault)"
+230480              "Paint The Town Red"
+
+5. Músicas lançadas na coreia:
+a.name              t.name              
+"V"                 "Love Me Again"     
+"LE SSERAFIM"       "Perfect Night"     
+"V"                 "Slow Dancing"      
+"IVE"               "Baddie"            
+"Lim Young Woong"   "Lovely Touch"      
+"Lim Young Woong"   "I Love You"        
+"Lim Young Woong"   "London Boy"        
+"Jimin"             "Set Me Free Pt.2"  
+"Lim Young Woong"   "Love Always Run Away"
+"Lim Young Woong"   "Rainbow"           
+"BTS"               "Take Two"          
+"Jung Kook"         "3D (feat. Jack Harlow)"
+"Jung Kook"         "Hate You"          
+"V"                 "Rainy Days"        
+"TAEYANG"           "VIBE (feat. Jimin of BTS)"
+"Jung Kook"         "Please Don't Change (feat. DJ Snake)"
+"NewJeans"          "Ditto"             
+"V"                 "For Us"            
+"Lim Young Woong"   "HERO"              
+"AKMU"              "Love Lee"          
+
+6. Média de danceabilidade das músicas do Bad Bunny:
+AVG(t.danceability) 
+0.7789999999999999  
+
+7. Os 3 artistas com maior popularidade média:
+ArtistName          avgPopularity       
+"Tate McRae"        100.0               
+"iñigo quintero"    99.0                
+"Kenya Grace"       98.0                
+
+8. Músicas com duração inferior a 2 min e com alta liveness:
+t.name              t.duration          t.liveness          
+"Вампир"            113143              0.579               
+
+9. Músicas com mais de 10 idiomas diferentes:
+track               countriesCount      countriesList       
+"greedy"            11                  ["Global", "DEU", "SAU", "AUS", "AUT", "BRA", "BGR", "BEL", "CAN", "DNK", "ARE"]
+"Paint The Town Red"11                  ["Global", "DEU", "SAU", "AUS", "AUT", "BLR", "BGR", "BEL", "CAN", "DNK", "ARE"]
+"Standing Next to You"13                  ["Global", "SAU", "AUS", "BLR", "BRA", "BGR", "CAN", "CHL", "KOR", "ARE", "ECU", "EGY", "SLV"]
+"Si No Estás"       11                  ["Global", "DEU", "ARG", "AUT", "BEL", "CHL", "COL", "CRI", "DNK", "ECU", "SLV"]
+
+10. Apresenta o subgrafo de Bad Bunny (musicas e albuns):
+grafo               
+path[(4)-[1876:PRODUCED]->(1141), (1141)<-[1987:CONTAINS]-(178)]
+path[(4)-[469:PRODUCED]->(374), (374)<-[626:CONTAINS]-(178)]
+path[(4)-[2424:PRODUCED]->(1381), (1381)<-[2519:CONTAINS]-(1293)]
+path[(4)-[1863:PRODUCED]->(1128), (1128)<-[1974:CONTAINS]-(178)]
+path[(4)-[1867:PRODUCED]->(1132), (1132)<-[1978:CONTAINS]-(178)]
+path[(4)-[1862:PRODUCED]->(1127), (1127)<-[1973:CONTAINS]-(178)]
+path[(4)-[1872:PRODUCED]->(1137), (1137)<-[1983:CONTAINS]-(178)]
+path[(4)-[1871:PRODUCED]->(1136), (1136)<-[1982:CONTAINS]-(178)]
+path[(4)-[2167:PRODUCED]->(1258), (1258)<-[2243:CONTAINS]-(1293)]
+path[(4)-[1869:PRODUCED]->(1134), (1134)<-[1980:CONTAINS]-(178)]
+path[(4)-[1864:PRODUCED]->(1129), (1129)<-[1975:CONTAINS]-(178)]
+path[(4)-[1586:PRODUCED]->(1010), (1010)<-[1690:CONTAINS]-(178)]
+path[(4)-[2170:PRODUCED]->(1261), (1261)<-[2246:CONTAINS]-(178)]
+path[(4)-[49:PRODUCED]->(122), (122)<-[232:CONTAINS]-(178)]
+path[(4)-[1824:PRODUCED]->(1089), (1089)<-[1935:CONTAINS]-(178)]
+path[(4)-[8:PRODUCED]->(81), (81)<-[191:CONTAINS]-(178)]
+path[(4)-[5:PRODUCED]->(78), (78)<-[188:CONTAINS]-(178)]

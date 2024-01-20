@@ -1,0 +1,47 @@
+Search for ('Enter' for quit): Maria
+Results: 
+Maria
+Mariana
+Mariam
+Mariano
+Mariama
+Marianna
+Mariame
+Mariah
+MariaLuísa
+Search for ('Enter' for quit): Ana
+Results: 
+Ana
+Anaísa
+Anaís
+Anabela
+Anaya
+Anastasia
+Anamar
+Anabel
+Anastácia
+Anastacia
+Ananda
+Anaisa
+Anais
+Anair
+Anaelle
+Anael
+Anaïs
+Anayah
+Anastácio
+Anastassia
+Anastasiya
+Anass
+Anas
+Anantveer
+Anami
+Anam
+Anagila
+Anabia
+Search for ('Enter' for quit): Sara
+Results: 
+Sara
+Sarah
+Sarai
+Search for ('Enter' for quit): 

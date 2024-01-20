@@ -1,0 +1,72 @@
+[
+  {
+    "author": "user2",
+    "timestamp": "2023-11-28 00:57:53.436",
+    "comment_id": 7,
+    "content": "Comment on video3",
+    "video_id": 3
+  },
+  {
+    "author": "user2",
+    "timestamp": "2023-11-28 00:57:53.370",
+    "comment_id": 2,
+    "content": "Comment on video1",
+    "video_id": 1
+  },
+  {
+    "author": "user4",
+    "timestamp": "2023-11-28 00:57:53.409",
+    "comment_id": 5,
+    "content": "Comment on video1",
+    "video_id": 1
+  },
+  {
+    "author": "user1",
+    "timestamp": "2023-11-28 00:57:53.497",
+    "comment_id": 10,
+    "content": "Comment on video4",
+    "video_id": 4
+  },
+  {
+    "author": "user1",
+    "timestamp": "2023-11-28 00:57:53.467",
+    "comment_id": 9,
+    "content": "Comment on video3",
+    "video_id": 3
+  },
+  {
+    "author": "user1",
+    "timestamp": "2023-11-28 00:57:53.423",
+    "comment_id": 6,
+    "content": "Comment on video2",
+    "video_id": 2
+  },
+  {
+    "author": "user1",
+    "timestamp": "2023-11-28 00:57:53.381",
+    "comment_id": 3,
+    "content": "Comment on video1",
+    "video_id": 1
+  },
+  {
+    "author": "user1",
+    "timestamp": "2023-11-28 00:57:53.354",
+    "comment_id": 1,
+    "content": "Comment on video1",
+    "video_id": 1
+  },
+  {
+    "author": "user3",
+    "timestamp": "2023-11-28 00:57:53.449",
+    "comment_id": 8,
+    "content": "Comment on video3",
+    "video_id": 3
+  },
+  {
+    "author": "user3",
+    "timestamp": "2023-11-28 00:57:53.399",
+    "comment_id": 4,
+    "content": "Comment on video1",
+    "video_id": 1
+  }
+]

@@ -1,0 +1,16 @@
+Qual a alinea? (a ou b): b
+Limite alterado para 5 produtos.
+Timeslot alterado para 4 segundos.
+Produto Produto1 registado para o utilizador Joao | +1 unidades (1 no total)
+Produto Produto2 registado para o utilizador Joao | +2 unidades (3 no total)
+Limite de produtos atingido para o utilizador Joao! ( tentou add 3 mas já tem 3 )
+Produto ProdutoX registado para o utilizador Joao | +3 unidades (5 no total)
+
+Produto ProdutoY registado para o utilizador Joao | +3 unidades (3 no total)
+ProdutoY (3 unidades)
+
+Produto ProdutoY registado para o utilizador Joao | +2 unidades (5 no total)
+ProdutoY (5 unidades)
+
+ProdutoY (5 unidades)
+

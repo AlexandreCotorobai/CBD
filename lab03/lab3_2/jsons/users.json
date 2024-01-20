@@ -1,0 +1,26 @@
+[
+  {
+    "username": "user2",
+    "email": "user2@example.com",
+    "name": "User Two",
+    "registration_timestamp": "2017-02-01 13:30:00.000"
+  },
+  {
+    "username": "user4",
+    "email": "user4@example.com",
+    "name": "User Four",
+    "registration_timestamp": "2017-04-01 16:00:00.000"
+  },
+  {
+    "username": "user1",
+    "email": "user1@example.com",
+    "name": "User One",
+    "registration_timestamp": "2017-01-01 12:00:00.000"
+  },
+  {
+    "username": "user3",
+    "email": "user3@example.com",
+    "name": "User Three",
+    "registration_timestamp": "2017-03-01 14:45:00.000"
+  }
+]

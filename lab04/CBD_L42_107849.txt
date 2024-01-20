@@ -1,0 +1,121 @@
+// NMEC: 107849
+#1
+MATCH (actor)-[:ACTED_IN]->(movie:Movie)<-[:DIRECTED]-(actor)
+RETURN actor.name AS Actor, movie.title AS MovieTitle;
+
+#2
+MATCH (actor)-[:ACTED_IN]->(movie:Movie)
+WHERE movie.released > 2005
+RETURN movie.released AS ReleaseDate, movie.title AS MovieTitle, COLLECT(actor.name) AS Actors;
+
+#3
+MATCH (p1)-[r1]-(p2)-[r2]-(p1)
+RETURN p1, p2;
+
+#4
+MATCH (p1)-[:REVIEWED]->(movie:Movie)<-[:REVIEWED]-(p2)
+WHERE ID(p1)<ID(p2)
+RETURN p1.name AS Person1, p2.name AS Person2, movie.title AS MovieTitle;
+
+#5
+MATCH (a1)-[:ACTED_IN]->(movie)<-[:ACTED_IN]-(a2)
+WHERE ID(a1) < ID(a2)
+WITH a1, a2, COLLECT(DISTINCT movie.title) AS movies
+WHERE SIZE(movies) > 1
+RETURN a1.name AS Actor1, a2.name AS Actor2, movies;
+
+#6
+MATCH (movie:Movie {title: 'Apollo 13'})<-[:ACTED_IN]-(actor)
+WITH movie, actor, movie.released - actor.born AS age
+RETURN movie.title AS MovieTitle, AVG(age) AS AverageAge;
+
+#7
+MATCH (movie:Movie)<-[:ACTED_IN]-(actor)
+WITH movie, actor, movie.released - actor.born AS age
+WITH movie, AVG(age) AS averageAge
+RETURN movie.title AS MovieTitle, toFloat(round(averageAge, 2)) AS AverageAge
+ORDER BY AverageAge DESC
+LIMIT 10;
+
+#8
+MATCH (movie:Movie)<-[:ACTED_IN]-(actor)
+WITH movie, actor, movie.released - actor.born AS age
+WITH movie, AVG(age) AS averageAge
+WITH movie.title AS MovieTitle, toFloat(round(averageAge, 2)) AS AverageAge
+ORDER BY AverageAge ASC
+LIMIT 1
+MATCH (m {title: MovieTitle})<-[:ACTED_IN]-(actor)
+RETURN m, actor 
+
+#9
+MATCH p=shortestPath((j {name: 'John Cusack'})-[*..10]-(d {name: 'Demi Moore'}))
+RETURN p;
+
+#10
+MATCH p=shortestPath((keanu:Person {name: 'Keanu Reeves'})-[*..5]-(tom:Person {name: 'Tom Cruise'}))
+RETURN DISTINCT length(p) AS ShortestPathLength;
+
+#11
+MATCH p=shortestPath((jim:Person)-[*]-(kevin:Person))
+WHERE jim.name CONTAINS 'Jim' AND kevin.name CONTAINS 'Kevin'
+RETURN length(p) AS ShortestPathLength ORDER BY length(p) ASC LIMIT 1;
+
+#12
+MATCH (jim:Person {name: 'Jim Cash'})-[*2]-(other:Person)
+RETURN other;
+
+#13
+MATCH path = shortestPath((kevin:Person {name: 'Kevin Bacon'})-[*..15]-(other:Person))
+WHERE kevin <> other
+RETURN  length(path) AS LongestSize
+ORDER BY length(path) DESC
+LIMIT 1
+
+#14
+MATCH path = shortestPath((p:Person)-[*..15]-(other:Person))
+WHERE p <> other
+RETURN  length(path) AS LongestSize
+ORDER BY length(path) DESC
+LIMIT 1
+
+#15
+MATCH (p1:Person), (p2:Person)
+WHERE ID(p1) < ID(p2)
+MATCH p=shortestPath((p1)-[*]-(p2))
+WITH length(p) AS distance, COUNT(*) AS pares
+RETURN distance, pares
+ORDER BY distance;
+
+#16
+MATCH (p1:Person), (p2:Person)
+WHERE id(p1) < id(p2)
+MATCH p=shortestPath((p1)-[:ACTED_IN*]-(p2))
+WITH p1, p2, length(p) AS distance
+RETURN p1.name AS Person1, p2.name AS Person2, AVG(distance) AS AvgDistance
+ORDER BY AvgDistance
+LIMIT 10;
+
+#17
+MATCH (actor:Person)-[r:ACTED_IN]->(movie:Movie)
+WHERE any(character IN r.roles WHERE character STARTS WITH 'Dr.')
+RETURN actor.name, r.roles;
+
+#18 Top 3 Diretores que tiveram mais reviewes nos filmes que dirigiram.
+MATCH (director:Person)-[:DIRECTED]->(movie:Movie)<-[:REVIEWED]-(p:Person)
+RETURN director.name AS Director, COUNT(p) AS TotalReviews
+ORDER BY TotalReviews DESC
+LIMIT 3;
+
+#19 Para cada filme apresenta nr reviews com rating acima de 70.
+MATCH (movie:Movie)<-[r:REVIEWED]-(p:Person)
+WHERE r.rating >= 70
+RETURN movie.title AS MovieTitle, COUNT(p) AS TotalReviews, COLLECT(r.rating) AS ReviewRating
+ORDER BY TotalReviews DESC;
+
+#20 Apresenta o subgrafo do ator que participou em mais filmes.
+MATCH (actor:Person)-[:ACTED_IN]->(movie:Movie)
+WITH actor, COUNT(movie) AS moviesCount
+ORDER BY moviesCount DESC
+LIMIT 1
+MATCH (actor)-[:ACTED_IN]->(movie:Movie)
+RETURN actor, COLLECT(movie) AS MoviesParticipated;

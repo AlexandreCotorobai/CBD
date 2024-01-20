@@ -1,0 +1,10 @@
+set "um" 1
+set "dois" 2
+set "tres" 3
+get "tres"
+rename "dois" "two"
+get "two"
+get "um"
+del "um"
+exists "um"
+type "two"

@@ -1,0 +1,68 @@
+Redis é uma base de dados das mais simples do tipo key-value NOSQL, cada "bucket pode ser literalmente qualquer coisa.
+
+Pontos Positivos: Grande Tolerancia a falha, grande flexibilidade, eficiente, facil de implementar.
+
+Pontos Negativos: Impróprio para aplicações complexas, não é eficiente a dar update a apenas uma parte do que está a ser alterado, dificil de manter conforme os dados aumentam.
+
+
+MongoDB é uma base de dados NOSQL que é flexível, escalável e adequada para armazenar dados estruturados e não estruturados.
+
+Pontos Positivos: Eficiente para quando se precisa de armazenar dados persistentes, os dados são guardados em BSON, o que permite uma estrutura de dados flexível, escalabilidade horizontal eficiente e suporta consultas complexas.
+
+Pontos Negativos: Menos eficiente para leitura em comparação com Redis, especialmente para cargas de trabalho intensivas em leitura.
+
+
+USANDO MONGODB
+
+Qual a alinea? (a ou b): b
+Limite alterado para 5 produtos.
+Timeslot alterado para 4 segundos.
+Produto Produto1 registado para o utilizador Joao | +1 unidades (1 no total)
+Tempo de execucao ao registar produto: 98ms
+Produto Produto2 registado para o utilizador Joao | +2 unidades (2 no total)
+Tempo de execucao ao registar produto: 13ms
+Produto Produto3 registado para o utilizador Joao | +3 unidades (3 no total)
+Tempo de execucao ao registar produto: 10ms
+Produto ProdutoX registado para o utilizador Joao | +3 unidades (3 no total)
+Produto ProdutoY registado para o utilizador Joao | +3 unidades (3 no total)
+ProdutoY Qty:3 Time to expire (s): 4
+
+Tempo de execucao ao ler todos os produtos: 5ms
+Produto ProdutoY registado para o utilizador Joao | +2 unidades (5 no total)
+ProdutoY Qty:3 Time to expire (s): 1
+ProdutoY Qty:2 Time to expire (s): 4
+
+ProdutoY Qty:2 Time to expire (s): 1
+
+Tempo de execucao ao ler todos os produtos: 6ms
+
+
+
+USANDO REDIS
+
+Qual a alinea? (a ou b): b
+Limite alterado para 5 produtos.
+Timeslot alterado para 4 segundos.
+Produto Produto1 registado para o utilizador Joao | +1 unidades (1 no total)
+Tempo de execucao: 8ms
+Produto Produto2 registado para o utilizador Joao | +2 unidades (3 no total)
+Tempo de execucao: 3ms
+Limite de produtos atingido para o utilizador Joao! ( tentou add 3 mas já tem 3 )
+Tempo de execucao: 1ms
+Produto ProdutoX registado para o utilizador Joao | +3 unidades (5 no total)
+Produto ProdutoY registado para o utilizador Joao | +3 unidades (3 no total)
+ProdutoY (3 unidades)
+
+Tempo de execucao ao ler todos os produtos: 0ms
+Produto ProdutoY registado para o utilizador Joao | +2 unidades (5 no total)
+ProdutoY (5 unidades)
+
+ProdutoY (5 unidades)
+
+Tempo de execucao ao ler todos os produtos: 1ms
+
+
+
+
+Como se pode observar utilizando redis o preciso de registarProduto e getAllProducts é bastante mais rapido, fiz varios testes, o resultado convergia sempre para o mesmo.
+No contexto deste exercicio para além do redis ter se mostrado mais eficaz, o mesmo também é mais aconselhavel visto que os dados são temporarios (estilo "cache"), se fossem dados com o objetivo de persistir mongoDB seria melhor, mas neste caso REDIS é a solução que mais se adequa.

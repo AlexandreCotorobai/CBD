@@ -1,0 +1,49 @@
+Entidades: User & Project
+Relacoes: CONTRIBUTED
+
+LOAD CSV WITH HEADERS FROM "file:///git_selection.csv" AS row
+MERGE (u:User{svn_id: row.svn_id})
+ON CREATE SET u.real_name = row.real_name, u.organization = row.organization
+MERGE (proj:Project {name: row.project_name})
+MERGE (u)-[:CONTRIBUTED {role: row.role_on_project}]->(proj);
+
+
+#1
+MATCH (u:User)
+RETURN properties(u);
+
+#2
+MATCH (u:User)
+RETURN u.real_name AS UserName;
+
+#3
+MATCH (u:User)-[:CONTRIBUTED]->(p:Project)
+RETURN DISTINCT properties(p);
+
+#4
+MATCH (u:User)-[:CONTRIBUTED]->(p:Project)
+RETURN u.real_name AS UserName, COUNT(DISTINCT p) AS TotalProjects;
+
+#5
+MATCH (u:User)-[:CONTRIBUTED]->(p:Project)
+RETURN u.real_name AS UserName, COUNT(DISTINCT p) AS TotalProjects
+ORDER BY TotalProjects DESC;
+
+#6
+MATCH (u:User)-[:CONTRIBUTED]->(p:Project)
+RETURN p.name AS ProjectName, COUNT(DISTINCT u) AS TotalMembers;
+
+#7
+MATCH (u:User)-[c:CONTRIBUTED]->(p:Project)
+WHERE c.role = 'Committer'
+RETURN p.name AS ProjectName, COUNT(DISTINCT u) AS TotalCommitters;
+
+#8
+MATCH (u1:User {svn_id: 'atm'})-[:CONTRIBUTED]->(project:Project)<-[:CONTRIBUTED]-(u2:User)
+WHERE u2.svn_id <> 'atm'
+RETURN u1.real_name AS User1, u2.real_name AS User2, project.name AS ProjectName;
+
+#9
+MATCH (atm:User {svn_id: 'atm'})-[:CONTRIBUTED {role: 'PMC'}]->(project:Project)<-[:CONTRIBUTED {role: 'Committer'}]-(otherUser:User)
+WHERE atm <> otherUser
+RETURN atm.real_name AS AtmUser, otherUser.real_name AS OtherUser, project.name AS ProjectName;

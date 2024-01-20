@@ -1,0 +1,38 @@
+[
+  {
+    "video_id": 1,
+    "rating": 5
+  },
+  {
+    "video_id": 1,
+    "rating": 4
+  },
+  {
+    "video_id": 1,
+    "rating": 3
+  },
+  {
+    "video_id": 2,
+    "rating": 5
+  },
+  {
+    "video_id": 2,
+    "rating": 4
+  },
+  {
+    "video_id": 2,
+    "rating": 2
+  },
+  {
+    "video_id": 3,
+    "rating": 3
+  },
+  {
+    "video_id": 3,
+    "rating": 2
+  },
+  {
+    "video_id": 3,
+    "rating": 1
+  }
+]

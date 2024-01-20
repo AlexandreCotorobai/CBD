@@ -1,0 +1,18 @@
+// Produto 1 2 e 3 adicionados com intervalo de 1seg
+// wait de 10seg entre ProdutoX e ProdutoY
+
+Qual a alinea? (a ou b): b
+Limite alterado para 5 produtos.
+Timeslot alterado para 4 segundos.
+Produto Produto1 registado para o utilizador Joao | +1 unidades (1 no total)
+Produto Produto2 registado para o utilizador Joao | +2 unidades (2 no total)
+Produto Produto3 registado para o utilizador Joao | +3 unidades (3 no total)
+Produto ProdutoX registado para o utilizador Joao | +3 unidades (3 no total)
+Produto ProdutoY registado para o utilizador Joao | +3 unidades (3 no total)
+ProdutoY Qty:3 Time to expire (s): 4
+
+Produto ProdutoY registado para o utilizador Joao | +2 unidades (5 no total)
+ProdutoY Qty:3 Time to expire (s): 1
+ProdutoY Qty:2 Time to expire (s): 4
+
+ProdutoY Qty:2 Time to expire (s): 1

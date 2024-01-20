@@ -1,0 +1,58 @@
+[
+  {
+    "author": "user2",
+    "upload_timestamp": "2017-02-15 13:30:00.000",
+    "description": "Description of video2",
+    "name": "video2",
+    "tags": "[Aveiro, tag1]",
+    "video_id": 2
+  },
+  {
+    "author": "user4",
+    "upload_timestamp": "2017-06-15 17:15:00.000",
+    "description": "Description of video5",
+    "name": "video5",
+    "tags": "[Coimbra, IRL]",
+    "video_id": 5
+  },
+  {
+    "author": "user1",
+    "upload_timestamp": "2017-01-15 12:00:00.000",
+    "description": "Description of video1",
+    "name": "video1",
+    "tags": "[Aveiro, IRL, No idea]",
+    "video_id": 1
+  },
+  {
+    "author": "user1",
+    "upload_timestamp": "2017-03-15 14:45:00.000",
+    "description": "Description of video3",
+    "name": "video3",
+    "tags": "[IRL, Porto]",
+    "video_id": 3
+  },
+  {
+    "author": "user1",
+    "upload_timestamp": "2017-08-15 18:30:00.000",
+    "description": "Description of video7",
+    "name": "video7",
+    "tags": "[Porto, tag4]",
+    "video_id": 7
+  },
+  {
+    "author": "user3",
+    "upload_timestamp": "2017-06-15 16:00:00.000",
+    "description": "Description of video4",
+    "name": "video4",
+    "tags": "[Coimbra, tag3]",
+    "video_id": 4
+  },
+  {
+    "author": "user3",
+    "upload_timestamp": "2017-08-15 18:30:00.000",
+    "description": "Description of video6",
+    "name": "video6",
+    "tags": "[Porto, tag4]",
+    "video_id": 6
+  }
+]

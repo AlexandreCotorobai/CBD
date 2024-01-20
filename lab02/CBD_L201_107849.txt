@@ -1,0 +1,93 @@
+# CBD – Lab201 – Alexandre Cotorobai
+
+## Estrutura de armazenamento (DB, Collections, Documents):
+
+Uma base de dados em MongoDB organiza os dados em coleções, por usa vez coleção contém documentos, que são objetos BSON (Binary JSON).
+A DB guarda pode guardar varias coleções, cada uma com um conjunto de documentos.
+
+## JSON e JavaScript:
+
+O formato de dados em MongoDB é o BSON.
+BSON é binário, o que o torna mais eficiente para armazenar e consultar dados em comparação com o JSON puro.
+JavaScript é usado para por exemplo executar comandos (find, insert, etc..)
+
+
+## CRUD
+Operações essenciais:
+Create: insertOne, insertMany
+Read: find
+Update: updateOne, updateMany
+Delete: deleteOne, deleteMany
+
+## Tipos de dados
+MongoDB aceita uma grande variedade de dados (arrays incluido)
+
+## Indices
+Estes são criados para acelerar o processo de procura, existem Single Field, Compound Index, Multikey, Text, Hashed, Geospatial Indexes
+
+
+## Agregações
+Tem operações como filtrar, projetar, ordenar e group.
+(Muito parecido com SQL)
+
+## Mapreduce
+Divide as tarefas em duas partes: map / reduce
+Map: Aplica-se uma operação sobre todos os elementos que queremos tratar
+Reduce: Trata os dados resultantes do map
+
+From Slides:
+– Map function: current document is accessible via this, emit(key, value) is used for emissions
+– Reduce function: key and array of values are provided as arguments, reduced value is published via return
+
+db.version()
+7.0.1
+
+db.hello()
+{
+  isWritablePrimary: true,
+  topologyVersion: {
+    processId: ObjectId("65198a0046c0cb8dcda8a861"),
+    counter: Long("0")
+  },
+  maxBsonObjectSize: 16777216,
+  maxMessageSizeBytes: 48000000,
+  maxWriteBatchSize: 100000,
+  localTime: ISODate("2023-10-01T15:41:52.668Z"),
+  logicalSessionTimeoutMinutes: 30,
+  connectionId: 27,
+  minWireVersion: 0,
+  maxWireVersion: 21,
+  readOnly: false,
+  ok: 1
+}
+
+db.getMongo()
+mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000
+
+db.getName()
+admin
+
+db.people.find({nome: "Joao"})
+{
+    "_id" : ObjectId("65199292972f49de13836d35"),
+    "nome" : "Joao",
+    "apelido" : "Pinto"
+}
+
+db.people.updateOne({ apelido: "Pinto" }, { $set: { apelido: "Sobreiro" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+db.people.find({nome: "Joao"})
+{
+    "_id" : ObjectId("65199292972f49de13836d35"),
+    "nome" : "Joao",
+    "apelido" : "Sobreiro"
+}
+
+db.people.remove({nome: "Joao"})
